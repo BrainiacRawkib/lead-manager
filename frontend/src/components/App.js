@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 class App extends Component{
     render() {
-        return <h1>Django React App</h1>
+        return (<h1>Django React App</h1>)
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));

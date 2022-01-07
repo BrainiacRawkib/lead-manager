@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development ./lead_manager/frontend/src/index.js --output ./lead_manager/frontend/static/frontend/main.js",
-    " build": "webpack --mode production ./lead_manager/frontend/src/index.js --output ./lead_manager/frontend/static/frontend/main.js"
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"

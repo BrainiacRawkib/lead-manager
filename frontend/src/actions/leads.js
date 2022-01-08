@@ -28,7 +28,7 @@ export const deleteLead = (id) => dispatch => {
 
 // ADD LEAD
 export const addLead = (lead) => dispatch => {
-    axios.post(`/api/leads/`)
+    axios.post(`/api/leads/`, lead)
         .then((res) => {
             dispatch({
                 type: ADD_LEAD,

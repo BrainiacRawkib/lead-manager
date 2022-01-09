@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'leads',
     'frontend',
     'rest_framework',
+    'knox',
 ]
 
 MIDDLEWARE = [

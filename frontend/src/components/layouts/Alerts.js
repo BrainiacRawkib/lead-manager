@@ -32,7 +32,8 @@ class Alerts extends Component {
 }
 
 const mapStateToProps = state => ({
-    error: state.errors
+    error: state.errors,
+    message: state.messages
 })
 
 export default connect(mapStateToProps)(withAlert(Alerts));

@@ -27,6 +27,9 @@ class Alerts extends Component {
             if (message.deleteLead) {
                 alert.success(message.deleteLead);
             }
+            if (message.addLead) {
+                alert.success(message.addLead);
+            }
         }
     }
 

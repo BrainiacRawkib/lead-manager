@@ -10,6 +10,7 @@ import Dashboard from "./leads/Dashboard";
 import Alerts from "./layouts/Alerts";
 import Register from "./accounts/Register";
 import Login from "./accounts/Login";
+import PrivateRoute from "./common/PrivateRoute";
 
 import {Provider} from "react-redux";
 import store from "../store";
@@ -32,7 +33,7 @@ class App extends Component{
                             <Alerts />
                             <div className="container">
                                 <Switch>
-                                    <Route exact path="/" component={Dashboard} />
+                                    <PrivateRoute exact path="/" component={Dashboard} />
                                     <Route exact path="/register/" component={Register} />
                                     <Route exact path="/login/" component={Login} />
                                 </Switch>

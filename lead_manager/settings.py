@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'leads',
     'frontend',
     'rest_framework',
+    'knox',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# REST FRAMEWORK config
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'knox.auth.TokenAuthentication',
+    )
+}

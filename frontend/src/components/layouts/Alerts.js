@@ -33,6 +33,9 @@ class Alerts extends Component {
             if (message.addLead) {
                 alert.success(message.addLead);
             }
+            if (message.passwordNotMatch) {
+                alert.error(message.passwordNotMatch);
+            }
         }
     }
 

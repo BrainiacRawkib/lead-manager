@@ -1,6 +1,6 @@
 import axios from "axios";
 import {returnErrors} from "./messages";
-import {USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL} from "./types";
+import {USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS} from "./types";
 
 // Check Token & Load User
 export const loadUser = () => (dispatch, getState) => {
@@ -63,5 +63,33 @@ export const login = (username, password) => dispatch => {
             dispatch({
                 type: LOGIN_FAIL
             });
+        });
+};
+
+// Logout User
+export const logout = () => (dispatch, getState) => {
+    // Get token from state
+    const token = getState().auth.token;
+
+    // Headers
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    // If token, add to headers config
+    if (token) {
+        config.headers['Authorization'] = `Token ${token}`;
+    }
+
+    axios.get('/api/auth/logout/', null, config)
+        .then(res => {
+            dispatch({
+                type: LOGOUT_SUCCESS,
+            });
+        })
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status));
         })
 }
